@@ -42,7 +42,7 @@ const doLogin=async (req,res)=>{
                     }
 
 
-                    const token =jwt.sign({...userData},process,env.JWT_PASSWORD,options)
+                    const token =jwt.sign({...userData},process.env.JWT_PASSWORD,options)
                     res.status(200).json({user:userData,token})
 
                 }else{
